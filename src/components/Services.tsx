@@ -5,7 +5,7 @@ const services = [
     icon: Globe,
     title: 'Développement Web',
     description: 'Sites web modernes et performants, applications web progressives et interfaces utilisateur intuitives.',
-    features: ['React / Vue.js', 'Node.js / Python', 'Design responsive', 'SEO optimisé']
+    features: ['React / NextJs', 'Node.js / Symfony', 'Design responsive', 'SEO optimisé']
   },
   {
     icon: Smartphone,

@@ -1,14 +1,14 @@
 import { Building2, TrendingUp, Users, Award } from 'lucide-react';
 
 const stats = [
-  { icon: Users, value: '150+', label: 'Clients satisfaits' },
-  { icon: Award, value: '200+', label: 'Projets réalisés' },
+  { icon: Users, value: '40+', label: 'Clients satisfaits' },
+  { icon: Award, value: '90+', label: 'Projets réalisés' },
   { icon: TrendingUp, value: '95%', label: 'Taux de satisfaction' },
-  { icon: Building2, value: '8+', label: "Années d'expérience" }
+  { icon: Building2, value: '17+', label: "Années d'expérience" }
 ];
 
 const clients = [
-  'TechCorp', 'InnovateLab', 'DigitalFlow', 'NextGen', 'CloudSync', 'StartupHub'
+  'AWS', 'Supabase', 'Stripe', 'Google Reserve', 'Open AI', 'CLaude AI'
 ];
 
 export default function Clients() {

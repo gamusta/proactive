@@ -88,7 +88,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" name="contact" data-netlify="true">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-slate-900 mb-2">
                   Nom complet *
