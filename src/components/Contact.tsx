@@ -88,7 +88,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <form className="space-y-6" name="contact" data-netlify="true">
+            <form className="space-y-6" name="contact" method="POST" data-netlify="true">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-slate-900 mb-2">
                   Nom complet *
