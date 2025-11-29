@@ -9,9 +9,23 @@ export default function Contact() {
     message: ''
   });
 
+  const encode = (data) => {
+    return Object.keys(data)
+        .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+  }
+
+
   const handleSubmit = (e: FormEvent) => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formData })
+    })
+        .then(() => alert("Message envoyé avec success!"))
+        .catch(error => alert(error));
+
     e.preventDefault();
-    console.log('Form submitted:', formData);
   };
 
   return (
@@ -38,8 +52,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Email</div>
-                    <a href="mailto:contact@digistudio.com" className="hover:underline">
-                      contact@digistudio.com
+                    <a href="mailto:contact@proactive.ma" className="hover:underline">
+                      contact@proactive.ma
                     </a>
                   </div>
                 </div>
@@ -50,8 +64,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold mb-1">Téléphone</div>
-                    <a href="tel:+33123456789" className="hover:underline">
-                      +33 1 23 45 67 89
+                    <a href="tel:+212661234254" className="hover:underline">
+                      +212661234254
                     </a>
                   </div>
                 </div>
@@ -61,8 +75,8 @@ export default function Contact() {
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <div className="font-semibold mb-1">Adresse</div>
-                    <div>123 Avenue des Champs-Élysées<br />75008 Paris, France</div>
+                    <div className="font-semibold mb-1">Technopark</div>
+                    <div>Bd Dammam, Casablanca, Maroc<br />20072 Casablanca, Maroc</div>
                   </div>
                 </div>
               </div>
@@ -88,7 +102,8 @@ export default function Contact() {
           </div>
 
           <div>
-            <form className="space-y-6" name="contact" method="POST" data-netlify="true">
+            <form onSubmit={handleSubmit} className="space-y-6" name="contact" method="POST">
+              <input type="hidden" name="form-name" value="contact" />
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-slate-900 mb-2">
                   Nom complet *
